@@ -91,7 +91,7 @@ After download, please extract the videos from the `rar` archives.
 The following commands illustrate how to extract the videos.
 ```
 mkdir rars && mkdir videos
-unrar x hmdb51-org.rar rars/
+unrar x hmdb51_org.rar rars/
 for a in $(ls rars); do unrar x "rars/${a}" videos/; done;
 ```
 
@@ -115,6 +115,9 @@ These can be achieved with the script `scripts/extract_optical_flow.sh`. The scr
 - `SRC_FOLDER` points to the folder where you put the video dataset
 - `OUT_FOLDER` points to the root folder where the extracted frames and optical images will be put in
 - `NUM_WORKER` specifies the number of GPU to use in parallel for flow extraction, must be larger than 1
+
+(scripts/extract_optical_flow.sh runs python2 code. If you are running python 3, either use a python2 environment to run this script or 
+change "python" to "python2" in scripts/extract_optical_flow.sh)
 
 The command for running optical flow extraction is as follows
 
